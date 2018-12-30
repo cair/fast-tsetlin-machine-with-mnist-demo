@@ -37,6 +37,7 @@ EPOCH 99
 Training Time: 69.5 s
 Evaluation Time: 13.7 s
 Accuracy: 98.3
+
 EPOCH 100
 Training Time: 71.5 s
 Evaluation Time: 10.8 s
