@@ -8,12 +8,10 @@ On the MNIST dataset, the bit manipulation leads to approx.
 
 compared to the vanilla C implementation (https://github.com/cair/TsetlinMachineC). 
 
-# Build
-```bash
-make
-```
 # MNIST Demo
 ```bash
+make
+./MNISTDemoBits 
 ...
 EPOCH 95
 Training Time: 72.9 s
