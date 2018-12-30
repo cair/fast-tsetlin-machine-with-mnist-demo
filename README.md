@@ -12,6 +12,32 @@ compared to the vanilla C implementation (https://github.com/cair/TsetlinMachine
 ```bash
 make
 ./MNISTDemoBits 
+
+EPOCH 1
+Training Time: 202.2 s
+Evaluation Time: 10.4 s
+Accuracy: 93.9
+
+EPOCH 2
+Training Time: 148.3 s
+Evaluation Time: 10.4 s
+Accuracy: 94.9
+
+EPOCH 3
+Training Time: 141.8 s
+Evaluation Time: 12.6 s
+Accuracy: 95.8
+
+EPOCH 4
+Training Time: 122.9 s
+Evaluation Time: 13.9 s
+Accuracy: 96.1
+
+EPOCH 5
+Training Time: 118.6 s
+Evaluation Time: 10.9 s
+Accuracy: 96.2
+
 ...
 EPOCH 95
 Training Time: 72.9 s
