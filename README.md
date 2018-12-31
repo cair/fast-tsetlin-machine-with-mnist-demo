@@ -8,7 +8,7 @@ On the MNIST dataset, the bit manipulation leads to approx.
 
 compared to the vanilla C implementation (https://github.com/cair/TsetlinMachineC). 
 
-# MNIST Demo
+## MNIST Demo
 ```bash
 make
 ./MNISTDemoBits 
@@ -74,7 +74,7 @@ Evaluation Time: 16.1 s
 Accuracy Dataset I: 98.2
 Accuracy Dataset II: 98.2
 ```
-# Data Preparation
+## Data Preparation
 
 The included dataset is a binarized version of the MNIST dataset (http://yann.lecun.com/exdb/mnist/), downloaded from https://github.com/mnielsen/neural-networks-and-deep-learning/tree/master/data. First, we extended the training data with 50 000 additional images - warped and translated versions of the original training images. Secondly, the complete dataset was binarized by replacing pixel values larger than 0.3 with 1 (with the original pixel values ranging from 0 to 1). Pixel values below or equal to 0.3 were replaced with 0.
 
@@ -111,7 +111,7 @@ The following example image was produced as outlined above:
 ............................
 ```
 
-# Further Work
+## Further Work
 
 * Perform a more extensive hyper-parameter search (manipulating THRESHOLD, CLAUSES, STATE_BITS, and S in TsetlinMachineBitsConfig.h).
 * Evaluate different binarization and data augmentation approaches for MNIST.
