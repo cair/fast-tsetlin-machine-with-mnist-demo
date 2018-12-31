@@ -75,3 +75,5 @@ Accuracy Dataset I: 98.2
 Accuracy Dataset II: 98.2
 ```
 # Data Preparation
+
+Data source: https://github.com/mnielsen/neural-networks-and-deep-learning/tree/master/data
