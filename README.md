@@ -115,7 +115,7 @@ The included dataset is a binarized version of the MNIST dataset (http://yann.le
 * Perform a more extensive hyperparameter search (manipulating THRESHOLD, CLAUSES, STATE_BITS, and S in TsetlinMachineBitsConfig.h).
 * Evaluate different binarization and data augmentation approaches for MNIST.
 * Investigate effect of using an ensemble of Tsetlin Machines.
-* Introduce bit-manipulation approach in the CUDA implementation (https://github.com/cair/TsetlinMachineCUDA).
+* Introduce bit-manipulation approach in the CUDA implementation (https://github.com/cair/TextUnderstandingTsetlinMachine).
 * Optimize code base further.
 
 ## Licence
