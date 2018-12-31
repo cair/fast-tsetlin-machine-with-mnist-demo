@@ -77,3 +77,8 @@ Accuracy Dataset II: 98.2
 # Data Preparation
 
 Data source: https://github.com/mnielsen/neural-networks-and-deep-learning/tree/master/data, http://yann.lecun.com/exdb/mnist/
+
+# Further Work
+
+* Perform a more extensive hyperparameter search (manipulating THRESHOLD, CLAUSES, S, as well as binarization of MNIST).
+* Investigate effect of using an Ensemble of Tsetlin Machines.
