@@ -10,6 +10,7 @@ compared to the vanilla Cython (https://github.com/cair/TsetlinMachineCython) an
 
 ## MNIST Demo
 ```bash
+unzip BinarizedMNISTData.zip
 make
 ./MNISTDemoBits 
 
