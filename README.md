@@ -31,6 +31,13 @@ Training Time: 121.7 s
 Evaluation Time: 16.0 s
 Accuracy Dataset I: 96.2
 Accuracy Dataset II: 96.7
+...
+
+EPOCH 250
+Training Time: 61.4 s
+Evaluation Time: 16.1 s
+Accuracy Dataset I: 98.2
+Accuracy Dataset II: 98.2
 
 EPOCH 4
 Training Time: 105.7 s
