@@ -111,7 +111,7 @@ The included dataset is a binarized version of the MNIST dataset (http://yann.le
 
 ## Further Work
 
-* Perform a more extensive hyper-parameter search (manipulating THRESHOLD, CLAUSES, STATE_BITS, and S in TsetlinMachineBitsConfig.h).
+* Perform a more extensive hyperparameter search (manipulating THRESHOLD, CLAUSES, STATE_BITS, and S in TsetlinMachineBitsConfig.h).
 * Evaluate different binarization and data augmentation approaches for MNIST.
 * Investigate effect of using an ensemble of Tsetlin Machines.
 * Optimize code base further.
