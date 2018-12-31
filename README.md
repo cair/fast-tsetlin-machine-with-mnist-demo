@@ -6,7 +6,7 @@ On the MNIST dataset, the bit manipulation leads to approx.
 * 8 times quicker classification, and
 * 3.5 times faster learning,
 
-compared to the vanilla C implementation (https://github.com/cair/TsetlinMachineC). 
+compared to the vanilla Cython (https://github.com/cair/TsetlinMachineCython) and C (https://github.com/cair/TsetlinMachineC) implementations. 
 
 ## MNIST Demo
 ```bash
