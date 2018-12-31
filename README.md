@@ -110,5 +110,5 @@ Data source: https://github.com/mnielsen/neural-networks-and-deep-learning/tree/
 
 # Further Work
 
-* Perform a more extensive hyper-parameter search (manipulating THRESHOLD, CLAUSES, S, as well as binarization of MNIST).
+* Perform a more extensive hyper-parameter search (manipulating THRESHOLD, CLAUSES, S, as well as binarization and augmentation of MNIST).
 * Investigate effect of using an Ensemble of Tsetlin Machines.
