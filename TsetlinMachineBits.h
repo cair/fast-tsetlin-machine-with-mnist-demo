@@ -37,8 +37,12 @@ https://arxiv.org/abs/1804.01508
 #define PREDICT 1
 #define UPDATE 0
 
+typedef unsigned int TsetlinMachineStateBits_t[STATE_BITS];
+typedef TsetlinMachineStateBits_t TsetlinMachineClauses_t[LA_CHUNKS];
+typedef TsetlinMachineClauses_t TsetlinMachineState_t[CLAUSES];
 struct TsetlinMachine { 
-	unsigned int ta_state[CLAUSES][LA_CHUNKS][STATE_BITS];
+	/*unsigned int ta_state[CLAUSES][LA_CHUNKS][STATE_BITS];*/
+	TsetlinMachineState_t ta_state;
 	unsigned int clause_output[CLAUSE_CHUNKS];
 	unsigned int feedback_to_la[LA_CHUNKS];
 	int feedback_to_clauses[CLAUSE_CHUNKS];
