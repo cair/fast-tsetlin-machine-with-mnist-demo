@@ -27,6 +27,7 @@ https://arxiv.org/abs/1804.01508
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <float.h>
 
 #include "MultiClassTsetlinMachineBits.h"
 
@@ -101,9 +102,9 @@ void mc_tm_update(struct MultiClassTsetlinMachine *mc_tm, unsigned int Xi[], int
 	tm_update(mc_tm->tsetlin_machines[target_class], Xi, 1, s);
 
 	// Randomly pick one of the other classes, for pairwise learning of class output 
-	int negative_target_class = (int)CLASSES * 1.0*rand()/RAND_MAX;
+	int negative_target_class = (int)CLASSES * (1.0*rand()/RAND_MAX - FLT_MIN);
 	while (negative_target_class == target_class) {
-		negative_target_class = (int)CLASSES * 1.0*rand()/RAND_MAX;
+		negative_target_class = (int)CLASSES * (1.0*rand()/RAND_MAX-FLT_MIN);
 	}
 	tm_update(mc_tm->tsetlin_machines[negative_target_class], Xi, 0, s);
 }
