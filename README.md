@@ -110,7 +110,7 @@ The included dataset is a binarized version of the MNIST dataset (http://yann.le
 ............................
 ```
 ## Learning Behaviour
-The below figure depicts the learning progress of a Tsetlin Machine on a binarized, but otherwise unenhanced, version of the MNIST dataset (https://en.wikipedia.org/wiki/MNIST_database). See also https://github.com/cair/fast-tsetlin-machine-with-mnist-demo.
+The below figure depicts the learning progress of a Tsetlin Machine on a binarized, but otherwise unenhanced, version of the MNIST dataset.
 
 ![Figure 4](https://github.com/olegranmo/blob/blob/master/learning_progress.png)
 
