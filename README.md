@@ -43,7 +43,6 @@ Training Time: 198.3 s
 Evaluation Time: 72.4 s
 Test Accuracy: 96.8
 Training Accuracy: 98.1
-
 ...
 
 EPOCH 396
