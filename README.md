@@ -15,65 +15,66 @@ make
 ./MNISTDemoBits 
 
 EPOCH 1
-Training Time: 178.6 s
-Evaluation Time: 13.4 s
-Accuracy Dataset I: 94.8
-Accuracy Dataset II: 95.2
+Training Time: 371.4 s
+Evaluation Time: 52.0 s
+Test Accuracy: 94.9
+Training Accuracy: 96.3
 
 EPOCH 2
-Training Time: 130.8 s
-Evaluation Time: 15.4 s
-Accuracy Dataset I: 95.4
-Accuracy Dataset II: 95.7
+Training Time: 256.6 s
+Evaluation Time: 57.0 s
+Test Accuracy: 95.8
+Training Accuracy: 97.2
 
 EPOCH 3
-Training Time: 121.7 s
-Evaluation Time: 16.0 s
-Accuracy Dataset I: 96.2
-Accuracy Dataset II: 96.7
+Training Time: 230.4 s
+Evaluation Time: 66.3 s
+Test Accuracy: 96.2
+Training Accuracy: 97.4
 
 EPOCH 4
-Training Time: 105.7 s
-Evaluation Time: 15.6 s
-Accuracy Dataset I: 96.5
-Accuracy Dataset II: 96.7
+Training Time: 207.1 s
+Evaluation Time: 73.8 s
+Test Accuracy: 96.4
+Training Accuracy: 97.8
 
 EPOCH 5
-Training Time: 100.5 s
-Evaluation Time: 15.3 s
-Accuracy Dataset I: 96.8
-Accuracy Dataset II: 97.0
+Training Time: 198.3 s
+Evaluation Time: 72.4 s
+Test Accuracy: 96.8
+Training Accuracy: 98.1
+
 ...
 
-EPOCH 246
-Training Time: 60.8 s
-Evaluation Time: 14.1 s
-Accuracy Dataset I: 98.2
-Accuracy Dataset II: 98.3
+EPOCH 396
+Training Time: 125.4 s
+Evaluation Time: 80.6 s
+Test Accuracy: 98.2
+Training Accuracy: 99.9
 
-EPOCH 247
-Training Time: 61.6 s
-Evaluation Time: 14.5 s
-Accuracy Dataset I: 98.2
-Accuracy Dataset II: 98.4
+EPOCH 397
+Training Time: 116.2 s
+Evaluation Time: 66.3 s
+Test Accuracy: 98.3
+Training Accuracy: 99.9
 
-EPOCH 248
-Training Time: 60.1 s
-Evaluation Time: 15.4 s
-Accuracy Dataset I: 98.3
-Accuracy Dataset II: 98.3
+EPOCH 398
+Training Time: 110.3 s
+Evaluation Time: 74.2 s
+Test Accuracy: 98.2
+Training Accuracy: 99.9
 
-EPOCH 249
-Training Time: 59.5 s
-Evaluation Time: 15.3 s
-Accuracy Dataset I: 98.1
-Accuracy Dataset II: 98.2
+EPOCH 399
+Training Time: 117.2 s
+Evaluation Time: 74.7 s
+Test Accuracy: 98.2
+Training Accuracy: 99.9
 
-EPOCH 250
-Training Time: 61.4 s
-Evaluation Time: 16.1 s
-Accuracy Dataset I: 98.2
-Accuracy Dataset II: 98.2
+EPOCH 400
+Training Time: 120.5 s
+Evaluation Time: 56.8 s
+Test Accuracy: 98.2
+Training Accuracy: 99.9
 ```
 ## Data Preparation
 
