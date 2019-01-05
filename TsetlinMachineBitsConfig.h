@@ -25,8 +25,8 @@ https://arxiv.org/abs/1804.01508
 
 */
 
-#define THRESHOLD 50
-#define CLAUSES 2000
+#define THRESHOLD 100
+#define CLAUSES 4000
 #define S 10.0
 
 #define STATE_BITS 8
