@@ -78,7 +78,7 @@ Training Accuracy: 99.9
 ```
 ## Data Preparation
 
-The included dataset is a binarized version of the MNIST dataset (http://yann.lecun.com/exdb/mnist/), downloaded from https://github.com/mnielsen/neural-networks-and-deep-learning/tree/master/data. First, we extended the training data with 50 000 additional images - warped and translated versions of the original training images. Secondly, the complete dataset was binarized by replacing pixel values larger than 0.3 with 1 (with the original pixel values ranging from 0 to 1). Pixel values below or equal to 0.3 were replaced with 0. The following image is an example of the images produced.
+The included dataset is a binarized, but otherwise unenhanced, version of the MNIST dataset (http://yann.lecun.com/exdb/mnist/), downloaded from https://github.com/mnielsen/neural-networks-and-deep-learning/tree/master/data. The complete dataset was binarized by replacing pixel values larger than 0.3 with 1 (with the original pixel values ranging from 0 to 1). Pixel values below or equal to 0.3 were replaced with 0. The following image is an example of the images produced.
 
 ```bash
 ............................
@@ -111,7 +111,7 @@ The included dataset is a binarized version of the MNIST dataset (http://yann.le
 ............................
 ```
 ## Learning Behaviour
-The below figure depicts the learning progress of a Tsetlin Machine on a binarized, but otherwise unenhanced, version of the MNIST dataset.
+The below figure depicts the learning progress of the Tsetlin Machine on the included MNIST dataset.
 
 ![Figure 4](https://github.com/olegranmo/blob/blob/master/learning_progress.png)
 
