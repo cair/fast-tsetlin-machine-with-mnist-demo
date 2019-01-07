@@ -15,63 +15,63 @@ make
 ./MNISTDemoBits 
 
 EPOCH 1
-Training Time: 371.4 s
-Evaluation Time: 52.0 s
-Test Accuracy: 94.9
-Training Accuracy: 96.3
+Training Time: 203.3 s
+Evaluation Time: 27.9 s
+Test Accuracy: 94.0
+Training Accuracy: 95.7
 
 EPOCH 2
-Training Time: 256.6 s
-Evaluation Time: 57.0 s
-Test Accuracy: 95.8
-Training Accuracy: 97.2
+Training Time: 143.7 s
+Evaluation Time: 29.0 s
+Test Accuracy: 95.4
+Training Accuracy: 96.9
 
 EPOCH 3
-Training Time: 230.4 s
-Evaluation Time: 66.3 s
-Test Accuracy: 96.2
-Training Accuracy: 97.4
+Training Time: 130.2 s
+Evaluation Time: 28.8 s
+Test Accuracy: 95.9
+Training Accuracy: 97.3
 
 EPOCH 4
-Training Time: 207.1 s
-Evaluation Time: 73.8 s
-Test Accuracy: 96.4
-Training Accuracy: 97.8
+Training Time: 115.3 s
+Evaluation Time: 26.5 s
+Test Accuracy: 96.2
+Training Accuracy: 97.5
 
 EPOCH 5
-Training Time: 198.3 s
-Evaluation Time: 72.4 s
-Test Accuracy: 96.8
-Training Accuracy: 98.1
+Training Time: 110.5 s
+Evaluation Time: 29.9 s
+Test Accuracy: 96.6
+Training Accuracy: 97.8
 ...
 
 EPOCH 396
-Training Time: 125.4 s
-Evaluation Time: 80.6 s
+Training Time: 49.5 s
+Evaluation Time: 35.1 s
 Test Accuracy: 98.2
-Training Accuracy: 99.9
+Training Accuracy: 99.8
 
 EPOCH 397
-Training Time: 116.2 s
-Evaluation Time: 66.3 s
-Test Accuracy: 98.3
+Training Time: 47.2 s
+Evaluation Time: 34.3 s
+Test Accuracy: 98.1
 Training Accuracy: 99.9
 
 EPOCH 398
-Training Time: 110.3 s
-Evaluation Time: 74.2 s
+Training Time: 47.4 s
+Evaluation Time: 34.2 s
 Test Accuracy: 98.2
 Training Accuracy: 99.9
 
 EPOCH 399
-Training Time: 117.2 s
-Evaluation Time: 74.7 s
-Test Accuracy: 98.2
-Training Accuracy: 99.9
+Training Time: 46.4 s
+Evaluation Time: 34.0 s
+Test Accuracy: 98.1
+Training Accuracy: 99.8
 
 EPOCH 400
-Training Time: 120.5 s
-Evaluation Time: 56.8 s
+Training Time: 46.4 s
+Evaluation Time: 34.0 s
 Test Accuracy: 98.2
 Training Accuracy: 99.9
 ```
