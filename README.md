@@ -126,7 +126,7 @@ As seen in the figure, both test and training accuracy increase across the epoch
 
 ## Licence
 
-Copyright (c) 2018 Ole-Christoffer Granmo
+Copyright (c) 2019 Ole-Christoffer Granmo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
