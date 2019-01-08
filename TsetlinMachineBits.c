@@ -24,6 +24,7 @@ This code implements a multiclass version of the Tsetlin Machine from paper arXi
 https://arxiv.org/abs/1804.01508
 
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
