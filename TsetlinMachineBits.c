@@ -114,7 +114,7 @@ static inline void tm_dec(struct TsetlinMachine *tm, int clause, int chunk, unsi
 	} 
 }
 
-/* Sum up the votes for each class (this is the multiclass version of the Tsetlin Machine) */
+/* Sum up the votes for each class */
 static inline int sum_up_class_votes(struct TsetlinMachine *tm)
 {
 	int class_sum = 0;
@@ -131,8 +131,6 @@ static inline int sum_up_class_votes(struct TsetlinMachine *tm)
 }
 
 /* Calculate the output of each clause using the actions of each Tsetline Automaton. */
-/* Output is stored an internal output array. */
-
 static inline void tm_calculate_clause_output(struct TsetlinMachine *tm, unsigned int Xi[], int predict)
 {
 	for (int j = 0; j < CLAUSE_CHUNKS; j++) {
