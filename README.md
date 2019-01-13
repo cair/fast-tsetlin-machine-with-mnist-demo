@@ -110,7 +110,7 @@ The included dataset is a binarized, but otherwise unenhanced, version of the MN
 ............................
 ```
 ## Learning Behaviour
-The below figure depicts average learning progress of the Tsetlin Machine on the included MNIST dataset (across 50 runs).
+The below figure depicts average learning progress (across 50 runs) of the Tsetlin Machine on the included MNIST dataset.
 
 ![Figure 4](https://github.com/olegranmo/blob/blob/master/learning_progress.png)
 
