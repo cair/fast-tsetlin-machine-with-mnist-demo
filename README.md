@@ -118,11 +118,11 @@ As seen in the figure, both test and training accuracy increase almost monotonic
 
 ## Bit-based Representation and Manipulation of Patterns
 
-The Tsetlin Machine epxresses both inputs, patterns, and outputs as bits, while recognition and learning rely on bit manipulation. In all brevity, the Tsetlin Machine solves complex pattern recognition problems with propositional formulas, composed by a collective of Tsetlin Automata (https://arxiv.org/abs/1804.01508). We represent the state of the Tsetlin Automata using multiple sequences of bits (e.g., 8 sequences to represent an 8 bit state index). Sequence 1 contains the first bit of the state. Sequence 2 contains the second bit, and so on, as exemplified below:
+The Tsetlin Machine solves complex pattern recognition problems with propositional formulas, composed by a collective of Tsetlin Automata (https://arxiv.org/abs/1804.01508). The Tsetlin Machine epxresses both inputs, patterns, and outputs as bits, while recognition and learning rely on bit manipulation. In all brevity, we represent the states of the Tsetlin Automata using multiple sequences of bits (e.g., 8 sequences to represent an 8 bit state index). Sequence 1 contains the first bit of the state. Sequence 2 contains the second bit, and so on, as exemplified below:
 
 ![Figure 4](https://github.com/olegranmo/blob/blob/master/Bit_Manipulation_3.png)
 
-The benefit of this representation is that the action of each Tsetlin Automaton is readily available from the most significant bit (sequence 8 in the figure). Thus, the output of the clause can be obtained from the input purely based on bitwise operators (NOT, AND, and CMP - comparison). When deployed after training, only the sequence containing the most significant bit is required. The other sequences can be discarded because these bits are only used to keep track of the learning.  Thus, when deployed, the bit-based representation provides a further reduction in memory usage.
+The benefit of this representation is that the action of each Tsetlin Automaton is readily available from the most significant bit (sequence 8 in the figure). Thus, the output (recognized or not recognized pattern) can be obtained from the input purely based on bitwise operators (NOT, AND, and CMP - comparison). When deployed after training, only the sequence containing the most significant bit is required. The other sequences can be discarded because these bits are only used to keep track of the learning.  Thus, when deployed, the bit-based representation provides a further reduction in memory usage.
 
 ## Further Work
 
