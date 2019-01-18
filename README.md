@@ -116,13 +116,13 @@ The below figure depicts average learning progress (across 50 runs) of the Tsetl
 
 As seen in the figure, both test and training accuracy increase almost monotonically across the epochs. Even while accuracy on the training data approaches 99.9%, accuracy on the test data continues to increase as well, hitting 98.2% after 400 epochs. This is quite different from what occurs with backpropagation on a neural network, where accuracy on test data starts to drop at some point due to overfitting, without proper regularization mechanisms.
 
-## Bitwise Manipulation of Clauses and Tsetlin Automata
+## Bit-based Representation and Manipulation of Patterns
 
-We introduce bitwise operation by representing the state of the Tsetlin Automata of a clause using multiple sequences of bits (e.g. 8 sequences to represent an 8 bit state index). Sequence 1 contains the first bit of the state. Sequence 2 contains the second bit, and so on, as exemplified below:
+The Tsetlin Machine epxresses both inputs, patterns, and outputs as bits, while recognition and learning rely on bit manipulation. In all brevity, it solves complex pattern recognition problems with propositional formulas, composed by a collective of Tsetlin Automata (http://www.mathnet.ru/php/archive.phtml?wshow=paper&jrnid=at&paperid=12417&option_lang=eng). We represent the state of the Tsetlin Automata using multiple sequences of bits (e.g. 8 sequences to represent an 8 bit state index). Sequence 1 contains the first bit of the state. Sequence 2 contains the second bit, and so on, as exemplified below:
 
 ![Figure 4](https://github.com/olegranmo/blob/blob/master/Bit_Manipulation_3.png)
 
-The benefit of this representation is that the action of each Tsetlin Automaton is readily available from the most significant bit (sequence 8 in the figure). Thus, the output of the clause can be obtained from the input purely based on bitwise operators (NOT, AND, and CMP - comparison). When deplloyed after training, only the sequence containing the most significant bit is required. The other sequence  can be discarded because these bits are only used to keep track of the learning.  Thus, when deployed, the bit-based representation provides a further eightfold reduction in memory usage.
+The benefit of this representation is that the action of each Tsetlin Automaton is readily available from the most significant bit (sequence 8 in the figure). Thus, the output of the clause can be obtained from the input purely based on bitwise operators (NOT, AND, and CMP - comparison). When deployed after training, only the sequence containing the most significant bit is required. The other sequences can be discarded because these bits are only used to keep track of the learning.  Thus, when deployed, the bit-based representation provides a further reduction in memory usage.
 
 ## Further Work
 
