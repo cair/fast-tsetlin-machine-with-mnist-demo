@@ -118,7 +118,7 @@ As seen in the figure, both test and training accuracy increase almost monotonic
 
 ## Bit-based Representation and Manipulation of Patterns
 
-The Tsetlin Machine epxresses both inputs, patterns, and outputs as bits, while recognition and learning rely on bit manipulation. In all brevity, the Tsetlin Machine solves complex pattern recognition problems with propositional formulas, composed by a collective of Tsetlin Automata (https://arxiv.org/abs/1804.01508). We represent the state of the Tsetlin Automata using multiple sequences of bits (e.g. 8 sequences to represent an 8 bit state index). Sequence 1 contains the first bit of the state. Sequence 2 contains the second bit, and so on, as exemplified below:
+The Tsetlin Machine epxresses both inputs, patterns, and outputs as bits, while recognition and learning rely on bit manipulation. In all brevity, the Tsetlin Machine solves complex pattern recognition problems with propositional formulas, composed by a collective of Tsetlin Automata (https://arxiv.org/abs/1804.01508). We represent the state of the Tsetlin Automata using multiple sequences of bits (e.g., 8 sequences to represent an 8 bit state index). Sequence 1 contains the first bit of the state. Sequence 2 contains the second bit, and so on, as exemplified below:
 
 ![Figure 4](https://github.com/olegranmo/blob/blob/master/Bit_Manipulation_3.png)
 
