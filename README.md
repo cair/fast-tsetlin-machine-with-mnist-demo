@@ -14,7 +14,7 @@ The Tsetlin Machine solves complex pattern recognition problems with proposition
 
 ![Figure 4](https://github.com/olegranmo/blob/blob/master/Bit_Manipulation_3.png)
 
-The benefit of this representation is that the action of each Tsetlin Automaton is readily available from the most significant bit (sequence 8 in the figure). Thus, the output (recognized or not recognized pattern) can be obtained from the input purely based on bitwise operators (NOT, AND, and CMP - comparison). When deployed after training, only the sequence containing the most significant bit is required. The other sequences can be discarded because these bits are only used to keep track of the learning.  Thus, when deployed, the bit-based representation provides a further reduction in memory usage.
+The benefit of this representation is that the action of each Tsetlin Automaton is readily available from the most significant bit (sequence 8 in the figure). Thus, the output (recognized or not recognized pattern) can be obtained from the input based on fast bitwise operators (NOT, AND, and CMP - comparison). When deployed after training, only the sequence containing the most significant bit is required. The other sequences can be discarded because these bits are only used to keep track of the learning.  Thus, when deployed, the bit-based representation provides a further reduction in memory usage.
 
 ## MNIST Demo
 ```bash
