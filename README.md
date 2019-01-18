@@ -10,7 +10,7 @@ compared to the vanilla Cython (https://github.com/cair/TsetlinMachine) and C (h
 
 ## Bit-based Representation and Manipulation of Patterns
 
-The Tsetlin Machine solves complex pattern recognition problems with propositional formulas, composed by a collective of Tsetlin Automata. In this implementation, we express both inputs, patterns, and outputs as bits, while recognition and learning rely on bit manipulation. Briefly stated, the states of the Tsetlin Automata are jointly represented using multiple sequences of bits (e.g., 8 sequences to represent an 8 bit state index). Sequence 1 contains the first bit of each state. Sequence 2 contains the second bit, and so on, as exemplified below:
+The Tsetlin Machine solves complex pattern recognition problems with propositional formulas, composed by a collective of Tsetlin Automata. In this implementation, we express both inputs, patterns, and outputs as bits, while recognition and learning rely on bit manipulation. Briefly stated, the states of the Tsetlin Automata are jointly represented using multiple sequences of bits (e.g., 8 sequences to represent an 8 bit state index). Sequence 1 contains the first bit of each state. Sequence 2 contains the second bit, and so on, as exemplified below for 24 Tsetlin Automata:
 
 ![Figure 4](https://github.com/olegranmo/blob/blob/master/Bit_Manipulation_3.png)
 
