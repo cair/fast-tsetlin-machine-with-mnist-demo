@@ -1,4 +1,4 @@
-#  A Fast Tsetlin Machine Implementation Employing Bit-Wise Operators with MNIST Demo.
+# A Fast Tsetlin Machine Implementation Employing Bit-Wise Operators
 An implementation of the Tsetlin Machine (https://arxiv.org/abs/1804.01508) using bitwise operations for increased learning- and classification speed.
 
 On the MNIST dataset, the bit manipulation leads to approx.
