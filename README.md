@@ -129,7 +129,6 @@ As seen in the figure, both test and training accuracy increase almost monotonic
 * Perform a more extensive hyperparameter search (manipulating THRESHOLD, CLAUSES, STATE_BITS, and S in TsetlinMachineBitsConfig.h).
 * Evaluate different binarization and data augmentation approaches for MNIST, including deskewing, noise removal, blurring, and pixel shifts.
 * Investigate effect of using an ensemble of Tsetlin Machines.
-* Introduce bit-manipulation approach in the CUDA implementation (https://github.com/cair/TextUnderstandingTsetlinMachine).
 * Optimize code base further.
 
 ## Licence
