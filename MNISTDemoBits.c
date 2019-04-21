@@ -5,7 +5,7 @@
 #include <time.h>
 #include <string.h>
 
-#define EPOCHS 400
+#define EPOCHS 100
 #define NUMBER_OF_TRAINING_EXAMPLES 60000
 #define NUMBER_OF_TEST_EXAMPLES 10000
 
@@ -163,7 +163,7 @@ int main(void)
 		printf("\nEPOCH %d\n", i+1);
 
 		clock_t start_total = clock();
-		mc_tm_fit(mc_tm, X_train, y_train, NUMBER_OF_TRAINING_EXAMPLES, 1, S);
+		mc_tm_fit(mc_tm, X_train, y_train, NUMBER_OF_TRAINING_EXAMPLES, 1);
 		clock_t end_total = clock();
 		double time_used = ((double) (end_total - start_total)) / CLOCKS_PER_SEC;
 
@@ -175,10 +175,10 @@ int main(void)
 		time_used = ((double) (end_total - start_total)) / CLOCKS_PER_SEC;
 
 		printf("Evaluation Time: %.1f s\n", time_used);
-		printf("Test Accuracy: %.1f\n", 100*test_accuracy);
+		printf("Test Accuracy: %.2f\n", 100*test_accuracy);
 
 		float training_2_accuracy = mc_tm_evaluate(mc_tm, X_training_2, y_training_2, NUMBER_OF_TEST_EXAMPLES);
-		printf("Training Accuracy: %.1f\n", 100*training_2_accuracy);
+		printf("Training Accuracy: %.2f\n", 100*training_2_accuracy);
 	}
 
 	return 0;

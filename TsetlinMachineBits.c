@@ -32,12 +32,46 @@ https://arxiv.org/abs/1804.01508
 
 #include "TsetlinMachineBits.h"
 
+int success_table_positions(double p, int m, int n)
+{ 
+    double temp = lgamma(m + n + 1.0);
+    temp -=  lgamma(n + 1.0) + lgamma(m + 1.0);
+    temp += m*log(p) + n*log(1.0-p);
+    return ((int)(exp(temp)*BINOMIAL_RESOLUTION + 0.5));
+}
+
+
 struct TsetlinMachine *CreateTsetlinMachine()
 {
 	/* Set up the Tsetlin Machine structure */
 
 	struct TsetlinMachine *tm = (void *)malloc(sizeof(struct TsetlinMachine));
 
+	// Produce table for quick sampling from binomial distribution
+	int sum = 0;
+	int max_positions = 0;
+	int max_i = 0;
+	int index = 0;
+	for (int i = 0; i < INT_SIZE; ++i) {
+		int positions = success_table_positions(1.0/S, i, INT_SIZE-i);
+		if (positions > max_positions) {
+			max_positions = positions;
+			max_i = i;
+		}
+
+		for (int j = 0; j < positions; ++j) {
+			(*tm).success_table[index] = i;
+			index++;
+		}
+
+		sum += positions;
+	}
+
+	if (sum < BINOMIAL_RESOLUTION) {
+		(*tm).success_table[index] = max_i;
+	}
+
+	// Initialize state of Tsetlin Automata
 	tm_initialize(tm);
 
 	return tm;
@@ -57,15 +91,24 @@ void tm_initialize(struct TsetlinMachine *tm)
 	}
 }
 
-static inline void tm_initialize_random_streams(struct TsetlinMachine *tm, float s)
+static inline void tm_initialize_random_streams(struct TsetlinMachine *tm)
 {
+	// Initialize all bits to zero
 	for (int k = 0; k < LA_CHUNKS; ++k) {
-		for (int b = 0; b < INT_SIZE; ++b) {
-			if  (1.0*rand()/RAND_MAX <= 1.0/s) {	
-				(*tm).feedback_to_la[k] |= (1 << b);
-			} else {
-				(*tm).feedback_to_la[k] &= ~(1 << b);
+		(*tm).feedback_to_la[k] = 0;
+	}
+
+	for (int k = 0; k < LA_CHUNKS; ++k) {
+		// Sample number of successes from binomial distribution
+		int n = (*tm).success_table[(unsigned int)(BINOMIAL_RESOLUTION * 1.0*rand()/((unsigned int)RAND_MAX + 1))];
+
+		// Set n bits
+		for (int i = 0; i < n; ++i) {
+			int b = (unsigned int)INT_SIZE * 1.0*rand()/((unsigned int)RAND_MAX + 1);
+			while ((*tm).feedback_to_la[k] & (1 << b)) {
+				b = (unsigned int)INT_SIZE * 1.0*rand()/((unsigned int)RAND_MAX + 1);
 			}
+			(*tm).feedback_to_la[k] |= (1 << b);
 		}
 	}
 }
@@ -173,7 +216,7 @@ static inline void tm_calculate_clause_output(struct TsetlinMachine *tm, unsigne
 // The Tsetlin Machine can be trained incrementally, one training example at a time.
 // Use this method directly for online and incremental training.
 
-void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target, float s)
+void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target)
 {
 	/*******************************/
 	/*** Calculate Clause Output ***/
@@ -223,7 +266,7 @@ void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target, float s
 		} else if ((2*target-1) * (1 - 2 * (j & 1)) == 1) {
 			// Type I Feedback
 
-			tm_initialize_random_streams(tm, s);
+			tm_initialize_random_streams(tm);
 
 			if (((*tm).clause_output[clause_chunk] & (1 << clause_chunk_pos)) > 0) {
 				for (int k = 0; k < LA_CHUNKS; ++k) {

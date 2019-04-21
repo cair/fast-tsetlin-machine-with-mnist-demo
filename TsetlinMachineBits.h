@@ -37,18 +37,21 @@ https://arxiv.org/abs/1804.01508
 #define PREDICT 1
 #define UPDATE 0
 
+#define BINOMIAL_RESOLUTION 1000
+
 struct TsetlinMachine { 
 	unsigned int ta_state[CLAUSES][LA_CHUNKS][STATE_BITS];
 	unsigned int clause_output[CLAUSE_CHUNKS];
 	unsigned int feedback_to_la[LA_CHUNKS];
 	int feedback_to_clauses[CLAUSE_CHUNKS];
+	int success_table[BINOMIAL_RESOLUTION];
 };
 
 struct TsetlinMachine *CreateTsetlinMachine();
 
 void tm_initialize(struct TsetlinMachine *tm);
 
-void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target, float s);
+void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target);
 
 int tm_score(struct TsetlinMachine *tm, unsigned int Xi[]);
 
