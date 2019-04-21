@@ -5,7 +5,7 @@
 #include <time.h>
 #include <string.h>
 
-#define EPOCHS 100
+#define EPOCHS 400
 #define NUMBER_OF_TRAINING_EXAMPLES 60000
 #define NUMBER_OF_TEST_EXAMPLES 10000
 
