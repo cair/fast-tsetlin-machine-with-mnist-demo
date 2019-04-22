@@ -41,31 +41,6 @@ struct TsetlinMachine *CreateTsetlinMachine()
 
 	struct TsetlinMachine *tm = (void *)malloc(sizeof(struct TsetlinMachine));
 
-	// Produce table for quick sampling from binomial distribution
-	int sum = 0;
-	int max_positions = 0;
-	int max_i = 0;
-	int index = 0;
-	for (int i = 0; i < INT_SIZE; ++i) {
-		int positions = success_table_positions(1.0/S, i, INT_SIZE-i);
-		if (positions > max_positions) {
-			max_positions = positions;
-			max_i = i;
-		}
-
-		for (int j = 0; j < positions; ++j) {
-			(*tm).success_table[index] = i;
-			index++;
-		}
-
-		sum += positions;
-	}
-
-	if (sum < BINOMIAL_RESOLUTION) {
-		(*tm).success_table[index] = max_i;
-	}
-
-	// Initialize state of Tsetlin Automata
 	tm_initialize(tm);
 
 	return tm;
