@@ -195,12 +195,13 @@ void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target)
 	
 	// Calculate feedback to clauses
 
+	float p = (1.0/(THRESHOLD*2))*(THRESHOLD + (1 - 2*target)*class_sum);
 	memset((*tm).feedback_to_clauses, 0, CLAUSE_CHUNKS*sizeof(int));
-    for (int j = 0; j < CLAUSES; j++) {
+  	for (int j = 0; j < CLAUSES; j++) {
     	unsigned int clause_chunk = j / INT_SIZE;
         unsigned int clause_chunk_pos = j % INT_SIZE;
 
-        (*tm).feedback_to_clauses[clause_chunk] |= (1.0*rand()/RAND_MAX <= (1.0/(THRESHOLD*2))*(THRESHOLD + (1 - 2*target)*class_sum)) << clause_chunk_pos;
+        (*tm).feedback_to_clauses[clause_chunk] |= (1.0*rand()/RAND_MAX <= p) << clause_chunk_pos;
     }
 
 	for (int j = 0; j < CLAUSES; j++) {
