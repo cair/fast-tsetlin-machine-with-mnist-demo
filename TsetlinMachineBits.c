@@ -35,15 +35,6 @@ https://arxiv.org/abs/1804.01508
 
 #include "TsetlinMachineBits.h"
 
-int success_table_positions(double p, int m, int n)
-{ 
-    double temp = lgamma(m + n + 1.0);
-    temp -=  lgamma(n + 1.0) + lgamma(m + 1.0);
-    temp += m*log(p) + n*log(1.0-p);
-    return ((int)(exp(temp)*BINOMIAL_RESOLUTION + 0.5));
-}
-
-
 struct TsetlinMachine *CreateTsetlinMachine()
 {
 	/* Set up the Tsetlin Machine structure */
