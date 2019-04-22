@@ -66,7 +66,8 @@ static inline void tm_initialize_random_streams(struct TsetlinMachine *tm)
 	memset((*tm).feedback_to_la, 0, LA_CHUNKS*sizeof(unsigned int));
 
 	int n = 2 * FEATURES;
-    double p = (1. / S) * (1 + .5 / S);
+    double p = (1. / S);
+    p = p * (1 + 0.5 * p);
     int active = normal(n * p, n * p * (1 - p));
     while (active--) {
         int f = fast_rand() % (2 * FEATURES);
@@ -199,6 +200,7 @@ void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target)
 	
 	int n = CLAUSES;
     double p = (1.0/(THRESHOLD*2))*(THRESHOLD + (1 - 2*target)*class_sum);
+    p = p * (1 + 0.5 * p);
     int active = normal(n * p, n * p * (1 - p));
     while (active--) {
         int f = fast_rand() % CLAUSES;
