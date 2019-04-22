@@ -66,8 +66,7 @@ static inline void tm_initialize_random_streams(struct TsetlinMachine *tm)
 	memset((*tm).feedback_to_la, 0, LA_CHUNKS*sizeof(unsigned int));
 
 	int n = 2 * FEATURES;
-    double p = (1. / S);
-    p = p * (1 + 0.5 * p);
+    double p = (1. / S) * (1 + .5 / S);
     int active = normal(n * p, n * p * (1 - p));
     while (active--) {
         int f = fast_rand() % (2 * FEATURES);
@@ -197,14 +196,11 @@ void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target)
 	// Calculate feedback to clauses
 
 	memset((*tm).feedback_to_clauses, 0, CLAUSE_CHUNKS*sizeof(int));
-	
-	int n = CLAUSES;
-    double p = (1.0/(THRESHOLD*2))*(THRESHOLD + (1 - 2*target)*class_sum);
-    p = p * (1 + 0.5 * p);
-    int active = normal(n * p, n * p * (1 - p));
-    while (active--) {
-        int f = fast_rand() % CLAUSES;
-        (*tm).feedback_to_clauses[f / INT_SIZE] |= 1 << (f % INT_SIZE);
+    for (int j = 0; j < CLAUSES; j++) {
+    	unsigned int clause_chunk = j / INT_SIZE;
+        unsigned int clause_chunk_pos = j % INT_SIZE;
+
+        (*tm).feedback_to_clauses[clause_chunk] |= (1.0*rand()/RAND_MAX <= (1.0/(THRESHOLD*2))*(THRESHOLD + (1 - 2*target)*class_sum)) << clause_chunk_pos;
     }
 
 	for (int j = 0; j < CLAUSES; j++) {
