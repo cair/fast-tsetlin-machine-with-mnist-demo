@@ -29,6 +29,9 @@ https://arxiv.org/abs/1804.01508
 #include <stdlib.h>
 #include <limits.h>
 #include <math.h>
+#include <string.h>
+
+#include "fast_rand.h"
 
 #include "TsetlinMachineBits.h"
 
@@ -93,24 +96,16 @@ void tm_initialize(struct TsetlinMachine *tm)
 
 static inline void tm_initialize_random_streams(struct TsetlinMachine *tm)
 {
-	// Initialize all bits to zero
-	for (int k = 0; k < LA_CHUNKS; ++k) {
-		(*tm).feedback_to_la[k] = 0;
-	}
+	// Initialize all bits to zero	
+	memset((*tm).feedback_to_la, 0, LA_CHUNKS*sizeof(unsigned int));
 
-	for (int k = 0; k < LA_CHUNKS; ++k) {
-		// Sample number of successes from binomial distribution
-		int n = (*tm).success_table[(unsigned int)(BINOMIAL_RESOLUTION * 1.0*rand()/((unsigned int)RAND_MAX + 1))];
-
-		// Set n bits
-		for (int i = 0; i < n; ++i) {
-			int b = (unsigned int)INT_SIZE * 1.0*rand()/((unsigned int)RAND_MAX + 1);
-			while ((*tm).feedback_to_la[k] & (1 << b)) {
-				b = (unsigned int)INT_SIZE * 1.0*rand()/((unsigned int)RAND_MAX + 1);
-			}
-			(*tm).feedback_to_la[k] |= (1 << b);
-		}
-	}
+	int n = 2 * FEATURES;
+    double p = (1. / S) * (1 + .5 / S);
+    int active = normal(n * p, n * p * (1 - p));
+    while (active--) {
+        int f = fast_rand() % (2 * FEATURES);
+        (*tm).feedback_to_la[f / INT_SIZE] |= 1 << (f % INT_SIZE);
+    }
 }
 
 // Increment the states of each of those 32 Tsetlin Automata flagged in the active bit vector.
@@ -176,9 +171,7 @@ static inline int sum_up_class_votes(struct TsetlinMachine *tm)
 /* Calculate the output of each clause using the actions of each Tsetline Automaton. */
 static inline void tm_calculate_clause_output(struct TsetlinMachine *tm, unsigned int Xi[], int predict)
 {
-	for (int j = 0; j < CLAUSE_CHUNKS; j++) {
-		(*tm).clause_output[j] = 0;
-	}
+	memset((*tm).clause_output, 0, CLAUSE_CHUNKS*sizeof(unsigned int));
 
 	for (int j = 0; j < CLAUSES; j++) {
 		unsigned int output = 1;
@@ -236,16 +229,15 @@ void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target)
 	
 	// Calculate feedback to clauses
 
-	for (int j = 0; j < CLAUSE_CHUNKS; j++) {
-	 	(*tm).feedback_to_clauses[j] = 0;
-	}
-
-	for (int j = 0; j < CLAUSES; j++) {
-		unsigned int clause_chunk = j / INT_SIZE;
-		unsigned int clause_chunk_pos = j % INT_SIZE;
-
-	 	(*tm).feedback_to_clauses[clause_chunk] |= (1.0*rand()/RAND_MAX <= (1.0/(THRESHOLD*2))*(THRESHOLD + (1 - 2*target)*class_sum)) << clause_chunk_pos;
-	}
+	memset((*tm).feedback_to_clauses, 0, CLAUSE_CHUNKS*sizeof(int));
+	
+	int n = CLAUSES;
+    double p = (1.0/(THRESHOLD*2))*(THRESHOLD + (1 - 2*target)*class_sum);
+    int active = normal(n * p, n * p * (1 - p));
+    while (active--) {
+        int f = fast_rand() % CLAUSES;
+        (*tm).feedback_to_clauses[f / INT_SIZE] |= 1 << (f % INT_SIZE);
+    }
 
 	for (int j = 0; j < CLAUSES; j++) {
 		unsigned int clause_chunk = j / INT_SIZE;
