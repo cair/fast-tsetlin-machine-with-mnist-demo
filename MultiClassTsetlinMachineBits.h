@@ -26,8 +26,7 @@ https://arxiv.org/abs/1804.01508
 */
 
 #include "TsetlinMachineBits.h"
-
-#define CLASSES 10
+#include "MultiClassTsetlinMachineConfig.h"
 
 struct MultiClassTsetlinMachine { 
 	struct TsetlinMachine *tsetlin_machines[CLASSES];
