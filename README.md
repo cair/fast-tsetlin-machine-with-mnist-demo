@@ -23,65 +23,65 @@ make
 ./MNISTDemoBits 
 
 EPOCH 1
-Training Time: 27.6 s
-Evaluation Time: 13.9 s
-Test Accuracy: 94.32
-Training Accuracy: 95.71
+Training Time: 30.6 s
+Evaluation Time: 13.6 s
+Test Accuracy: 94.16
+Training Accuracy: 95.66
 
 EPOCH 2
-Training Time: 22.9 s
-Evaluation Time: 14.0 s
-Test Accuracy: 95.28
-Training Accuracy: 96.60
+Training Time: 25.5 s
+Evaluation Time: 14.2 s
+Test Accuracy: 95.58
+Training Accuracy: 96.52
 
 EPOCH 3
-Training Time: 22.1 s
-Evaluation Time: 14.4 s
-Test Accuracy: 96.00
-Training Accuracy: 97.34
+Training Time: 24.4 s
+Evaluation Time: 14.6 s
+Test Accuracy: 95.99
+Training Accuracy: 97.19
 
 EPOCH 4
-Training Time: 21.5 s
-Evaluation Time: 14.5 s
-Test Accuracy: 96.25
-Training Accuracy: 97.66
+Training Time: 24.4 s
+Evaluation Time: 15.0 s
+Test Accuracy: 96.30
+Training Accuracy: 97.67
 
 EPOCH 5
-Training Time: 21.1 s
-Evaluation Time: 14.6 s
-Test Accuracy: 96.56
-Training Accuracy: 97.85
+Training Time: 23.9 s
+Evaluation Time: 15.2 s
+Test Accuracy: 96.70
+Training Accuracy: 97.74
 ...
 
 EPOCH 396
-Training Time: 49.5 s
-Evaluation Time: 35.1 s
-Test Accuracy: 98.2
-Training Accuracy: 99.8
+Training Time: 18.5 s
+Evaluation Time: 15.0 s
+Test Accuracy: 98.15
+Training Accuracy: 99.90
 
 EPOCH 397
-Training Time: 47.2 s
-Evaluation Time: 34.3 s
-Test Accuracy: 98.1
-Training Accuracy: 99.9
+Training Time: 18.3 s
+Evaluation Time: 14.5 s
+Test Accuracy: 98.12
+Training Accuracy: 99.91
 
 EPOCH 398
-Training Time: 47.4 s
-Evaluation Time: 34.2 s
-Test Accuracy: 98.2
-Training Accuracy: 99.9
+Training Time: 18.2 s
+Evaluation Time: 14.4 s
+Test Accuracy: 98.13
+Training Accuracy: 99.92
 
 EPOCH 399
-Training Time: 46.4 s
-Evaluation Time: 34.0 s
-Test Accuracy: 98.1
-Training Accuracy: 99.8
+Training Time: 18.4 s
+Evaluation Time: 14.9 s
+Test Accuracy: 98.19
+Training Accuracy: 99.90
 
 EPOCH 400
-Training Time: 46.4 s
-Evaluation Time: 34.0 s
-Test Accuracy: 98.2
-Training Accuracy: 99.9
+Training Time: 18.0 s
+Evaluation Time: 14.4 s
+Test Accuracy: 98.12
+Training Accuracy: 99.90
 ```
 ## Data Preparation
 
