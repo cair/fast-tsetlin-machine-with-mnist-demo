@@ -66,12 +66,17 @@ static inline void tm_initialize_random_streams(struct TsetlinMachine *tm)
 	memset((*tm).feedback_to_la, 0, LA_CHUNKS*sizeof(unsigned int));
 
 	int n = 2 * FEATURES;
-    double p = (1. / S) * (1 + .5 / S);
-    int active = normal(n * p, n * p * (1 - p));
-    while (active--) {
-        int f = fast_rand() % (2 * FEATURES);
-        (*tm).feedback_to_la[f / INT_SIZE] |= 1 << (f % INT_SIZE);
-    }
+	double p = 1.0 / S;
+	int active = normal(n * p, n * p * (1 - p));
+	active = active >= n ? n : active;
+	active = active < 0 ? 0 : active;
+	while (active--) {
+		int f = fast_rand() % (2 * FEATURES);
+		while ((*tm).feedback_to_la[f / INT_SIZE] & (1 << (f % INT_SIZE))) {
+			f = fast_rand() % (2 * FEATURES);
+	    	}
+		(*tm).feedback_to_la[f / INT_SIZE] |= 1 << (f % INT_SIZE);
+	}
 }
 
 // Increment the states of each of those 32 Tsetlin Automata flagged in the active bit vector.
