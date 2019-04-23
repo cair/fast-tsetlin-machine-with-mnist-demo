@@ -23,34 +23,34 @@ make
 ./MNISTDemoBits 
 
 EPOCH 1
-Training Time: 30.6 s
-Evaluation Time: 13.6 s
-Test Accuracy: 94.16
-Training Accuracy: 95.66
+Training Time: 33.1 s
+Evaluation Time: 13.3 s
+Test Accuracy: 94.42
+Training Accuracy: 95.99
 
 EPOCH 2
-Training Time: 25.5 s
-Evaluation Time: 14.2 s
-Test Accuracy: 95.58
-Training Accuracy: 96.52
+Training Time: 25.8 s
+Evaluation Time: 13.8 s
+Test Accuracy: 95.39
+Training Accuracy: 96.72
 
 EPOCH 3
-Training Time: 24.4 s
-Evaluation Time: 14.6 s
-Test Accuracy: 95.99
-Training Accuracy: 97.19
+Training Time: 24.6 s
+Evaluation Time: 13.9 s
+Test Accuracy: 95.77
+Training Accuracy: 97.21
 
 EPOCH 4
-Training Time: 24.4 s
-Evaluation Time: 15.0 s
-Test Accuracy: 96.30
-Training Accuracy: 97.67
+Training Time: 23.9 s
+Evaluation Time: 13.9 s
+Test Accuracy: 96.27
+Training Accuracy: 97.54
 
 EPOCH 5
-Training Time: 23.9 s
-Evaluation Time: 15.2 s
-Test Accuracy: 96.70
-Training Accuracy: 97.74
+Training Time: 23.3 s
+Evaluation Time: 14.2 s
+Test Accuracy: 96.52
+Training Accuracy: 97.76
 ...
 
 EPOCH 396
