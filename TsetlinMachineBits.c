@@ -206,7 +206,7 @@ void tm_update(struct TsetlinMachine *tm, unsigned int Xi[], int target)
     	unsigned int clause_chunk = j / INT_SIZE;
         unsigned int clause_chunk_pos = j % INT_SIZE;
 
-        (*tm).feedback_to_clauses[clause_chunk] |= (1.0*fast_rand()/FAST_RAND_MAX <= p) << clause_chunk_pos;
+        (*tm).feedback_to_clauses[clause_chunk] |= (((float)fast_rand())/((float)FAST_RAND_MAX) <= p) << clause_chunk_pos;
     }
 
 	for (int j = 0; j < CLAUSES; j++) {
