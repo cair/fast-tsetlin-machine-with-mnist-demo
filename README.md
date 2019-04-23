@@ -4,7 +4,7 @@ An implementation of the Tsetlin Machine (https://arxiv.org/abs/1804.01508) usin
 On the MNIST dataset, the bit manipulation leads to approx.
 * 10 times smaller memory footprint,
 * 8 times quicker classification, and
-* 3.5 times faster learning,
+* 10 times faster learning,
 
 compared to the vanilla Cython (https://github.com/cair/TsetlinMachine) and C (https://github.com/cair/TsetlinMachineC) implementations.
 
