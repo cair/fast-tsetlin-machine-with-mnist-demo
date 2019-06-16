@@ -32,19 +32,20 @@ https://arxiv.org/abs/1804.01508
 #define LA_CHUNKS (((2*FEATURES-1)/INT_SIZE + 1))
 #define CLAUSE_CHUNKS ((CLAUSES-1)/INT_SIZE + 1)
 
+#if ((FEATURES*2) % 32 != 0)
 #define FILTER (~(0xffffffff << ((FEATURES*2) % INT_SIZE)))
+#else
+#define FILTER 0xffffffff
+#endif
 
 #define PREDICT 1
 #define UPDATE 0
-
-#define BINOMIAL_RESOLUTION 1000
 
 struct TsetlinMachine { 
 	unsigned int ta_state[CLAUSES][LA_CHUNKS][STATE_BITS];
 	unsigned int clause_output[CLAUSE_CHUNKS];
 	unsigned int feedback_to_la[LA_CHUNKS];
 	int feedback_to_clauses[CLAUSE_CHUNKS];
-	int success_table[BINOMIAL_RESOLUTION];
 };
 
 struct TsetlinMachine *CreateTsetlinMachine();
