@@ -32,11 +32,7 @@ https://arxiv.org/abs/1804.01508
 #define LA_CHUNKS (((2*FEATURES-1)/INT_SIZE + 1))
 #define CLAUSE_CHUNKS ((CLAUSES-1)/INT_SIZE + 1)
 
-#if ((FEATURES*2) % 32 != 0)
 #define FILTER (~(0xffffffff << ((FEATURES*2) % INT_SIZE)))
-#else
-#define FILTER 0xffffffff
-#endif
 
 #define PREDICT 1
 #define UPDATE 0
