@@ -160,7 +160,7 @@ static inline void tm_calculate_clause_output(struct TsetlinMachine *tm, unsigne
 			((*tm).ta_state[j][LA_CHUNKS-1][STATE_BITS-1] & Xi[LA_CHUNKS-1] & FILTER) ==
 			((*tm).ta_state[j][LA_CHUNKS-1][STATE_BITS-1] & FILTER);
 
-		all_exclude = all_exclude && ((*tm).ta_state[j][LA_CHUNKS-1][STATE_BITS-1] == 0);
+		all_exclude = all_exclude && (((*tm).ta_state[j][LA_CHUNKS-1][STATE_BITS-1] & FILTER) == 0);
 
 		output = output && !(predict == PREDICT && all_exclude == 1);
 	
